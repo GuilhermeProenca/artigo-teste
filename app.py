@@ -8,7 +8,7 @@ from PIL import Image
 st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.")
 
-gender = st.selectbox("Gênero:", ("Feminino", "Masculino"), index=None)
+gender = st.selectbox("Gênero:", ("Feminino", "Masculino"), index=0)
 
 if (gender == "Feminino"):
     gender = "F"
