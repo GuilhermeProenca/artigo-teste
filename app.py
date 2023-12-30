@@ -17,14 +17,14 @@ if (gender == "Feminino"):
 else:
     gender = "M"
 
-st.markdown("### Gênero:")
-age = st.number_input("Idade (Exemplo: 35 anos)", format="%i", min_value=1)
+st.markdown("### Idade (Exemplo: 35 anos)")
+age = st.number_input("1", format="%i", min_value=1)
 
 st.markdown("### Altura (Exemplo: 170 cm)")
-measure_height = st.number_input("", format="%f", min_value=1)
+measure_height = st.number_input("2", format="%f", min_value=1)
 
 st.markdown("### Peso (Exemplo: 80 kg)")
-weight = st.number_input("", format="%f", min_value=1)
+weight = st.number_input("3", format="%f", min_value=1)
 
 activity_factor = st.selectbox(
                                 "Fator de atividade",
