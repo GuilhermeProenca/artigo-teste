@@ -6,10 +6,7 @@ import joblib
 
 from PIL import Image
 
-if 'idioma_selecionado' not in st.session_state:
-    # Se não estiver na sessão, define o valor padrão
-    st.session_state.idioma_selecionado = "Português"
-    idioma_selecionado = "Português"
+idioma_selecionado = "Português"
 
 textos = {
     "Português": {
