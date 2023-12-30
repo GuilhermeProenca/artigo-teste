@@ -203,10 +203,10 @@ if st.button("Resultado"):
 
     st.write(f"Peso residual: {result_residual_weight} kg ({round(perc_residual_weight, 2)}%)")
 
-    st.write("IMC (kg/m2): ", round(result_imc, 2))
+    st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
 
-    st.write("Status IMC: ", imc_status)
+    st.write(f"Status IMC: {imc_status}")
 
-    st.write("Taxa de metabolismo basal (k/cal):", round(result_tmb, 0))
+    st.write(f"Taxa de metabolismo basal (k/cal): {round(result_tmb, 0)}")
 
-    st.write("Consumo de caloria diário (k/cal):", round(result_daily_calorie, 0))
+    st.write(f"Consumo de caloria diário (k/cal): {round(result_daily_calorie, 0)})
