@@ -10,7 +10,7 @@ st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálc
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
 st.markdown("### Gênero:")
-gender = st.selectbox("Gênero:", ("Feminino", "Masculino"), index=None)
+gender = st.selectbox("Gênero:", ("Feminino", "Masculino"))
 
 option = st.selectbox(
    "How would you like to be contacted?",
