@@ -16,11 +16,11 @@ if (gender == "Feminino"):
 else:
     gender = "M"
 
-age = st.number_input("Idade (Exemplo: 35 anos)", format="%i")
+age = st.number_input("Idade (Exemplo: 35 anos)", format="%i", min_value=1)
 
-measure_height = st.number_input("Altura (Exemplo: 170 cm)", format="%f")
+measure_height = st.number_input("Altura (Exemplo: 170 cm)", format="%f", min_value=1)
 
-weight = st.number_input("Peso (Exemplo: 80 kg)", format="%f")
+weight = st.number_input("Peso (Exemplo: 80 kg)", format="%f", min_value=1)
 
 #activity_factor = st.selectbox(
 #                                "Fator de atividade",
