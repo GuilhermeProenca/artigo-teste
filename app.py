@@ -7,7 +7,7 @@ import joblib
 from PIL import Image
 
 if 'idioma_selecionado' not in st.session_state:
-    st.session_state.idioma_selecionado = "Inglês"
+    st.session_state.idioma_selecionado = "English"
 
 textos = {
     "Português": {
@@ -24,7 +24,7 @@ textos = {
     }
 }
 
-idioma_selecionado = st.radio(textos[idioma_selecionado]["menu_idioma"], textos[idioma_selecionado]["opcoes_idioma"], index=0, key="idioma")
+idioma_selecionado = st.radio(textos[st.session_state.idioma_selecionado]["menu_idioma"], textos[st.session_state.idioma_selecionado]["opcoes_idioma"], index=0, key="idioma")
 
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
