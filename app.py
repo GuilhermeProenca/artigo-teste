@@ -23,10 +23,10 @@ st.markdown("### Idade")
 age = st.number_input("Exemplo: 35 anos", format="%i", min_value=18)
 
 st.markdown("### Altura")
-measure_height = st.number_input("Exemplo: 170 cm", format="%:.2f", min_value=100.0, step=0.10)
+measure_height = st.number_input("Exemplo: 170 cm", format="%.2f", min_value=100.0, step=0.10)
 
 st.markdown("### Peso")
-weight = st.number_input("Exemplo: 80 kg", format="%f", min_value=40.0, step=0.10)
+weight = st.number_input("Exemplo: 80 kg", format="%.2f", min_value=40.0, step=0.10)
 
 st.markdown("### Fator de atividade")
 activity_factor = st.selectbox(
