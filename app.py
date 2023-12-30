@@ -9,7 +9,7 @@ from PIL import Image
 st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
-st.markdown("### Selecione uma opção:")
+st.markdown("### Gênero:")
 gender = st.selectbox("Gênero:", ["Feminino", "Masculino"])
 
 if (gender == "Feminino"):
@@ -17,24 +17,35 @@ if (gender == "Feminino"):
 else:
     gender = "M"
 
+st.markdown("### Gênero:")
 age = st.number_input("Idade (Exemplo: 35 anos)", format="%i", min_value=1)
 
-measure_height = st.number_input("Altura (Exemplo: 170 cm)", format="%f", min_value=1)
+st.markdown("### Altura (Exemplo: 170 cm)")
+measure_height = st.number_input("", format="%f", min_value=1)
 
-weight = st.number_input("Peso (Exemplo: 80 kg)", format="%f", min_value=1)
+st.markdown("### Peso (Exemplo: 80 kg)")
+weight = st.number_input("", format="%f", min_value=1)
 
-#activity_factor = st.selectbox(
-#                                "Fator de atividade",
-#                                ("Sedentário - Pouco ou nenhum exercício", \
-#                                 "Levemente ativo - Exercício leve de 1 a 3 dias por semana",\
-#                                 "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
-#                                 "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
-#                                 "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"),
-#                                index=None,
-#                                placeholder="Selecione o fator de atividade",
-#                              )
+activity_factor = st.selectbox(
+                                "Fator de atividade",
+                                ("Sedentário - Pouco ou nenhum exercício", \
+                                 "Levemente ativo - Exercício leve de 1 a 3 dias por semana",\
+                                 "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
+                                 "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
+                                 "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"),
+                                index=None
+                              )
 
-activity_factor = 0
+if (activity_factor == "Sedentário - Pouco ou nenhum exercício"):
+    activity_factor = 0
+elif(activity_factor == "Levemente ativo - Exercício leve de 1 a 3 dias por semana"):
+    activity_factor = 1
+elif(activity_factor == "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana"):
+    activity_factor = 2
+elif(activity_factor == "Muito ativo - Exercícios intensos de 5 a 6 dias por semana"):
+    activity_factor = 3
+else:
+    activity_factor = 4
 
 neck_measure = 38.0
 measure_waist = 75.0
