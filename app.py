@@ -6,11 +6,7 @@ import joblib
 
 from PIL import Image
 
-
-
-idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
-
-#idioma_selecionado = st.radio("Select the language", ["Portuguese", "English"], index=0, key="en-us")
+idioma_selecionado = st.radio("Select language:", ["Português", "Inglês"], index=0, key="idioma")
 
 # Crie um dicionário para mapear os textos em português e inglês
 textos = {
@@ -19,7 +15,6 @@ textos = {
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
         "selecao_idioma": "Selecione o idioma:",
         "opcoes_idioma": ["Português", "Inglês"]
-        # Adicione outros textos em português aqui...
     },
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -32,13 +27,18 @@ textos = {
 # Atualize os textos com base na seleção de idioma
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
+selecao_idioma_texto = textos[idioma_selecionado]["selecao_idioma"]
 opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
+
+# Atualize outros textos conforme necessário...
 
 # Exiba os textos no Streamlit
 st.title(titulo)
 st.text(objetivo)
 
-idioma_selecionado = st.radio(selecao_idioma, opcoes_idioma, index=0, key="en-us")
+# Atualize o texto do st.radio e as opções
+idioma_selecionado = st.radio(selecao_idioma_texto, opcoes_idioma, index=0, key="idioma")
+
 
 st.write("---")
 
