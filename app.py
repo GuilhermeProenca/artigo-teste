@@ -9,6 +9,51 @@ from PIL import Image
 st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
 st.text("Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
+st.write("---")
+
+#import streamlit as st
+import altair as alt
+
+# Texto que será exibido ao passar o mouse sobre o elemento
+texto_exibicao = "Texto ao passar o mouse"
+
+# Criação do gráfico que funcionará como a área sensível ao mouse
+chart = alt.Chart().mark_point().encode(
+    x='x:Q',
+    y='y:Q',
+    tooltip=alt.Tooltip('tooltip:N')
+).properties(
+    width=300,
+    height=200
+).interactive()
+
+# Adiciona o gráfico ao Streamlit
+st.altair_chart(chart, use_container_width=True)
+
+# Adiciona o texto ao gráfico
+st.markdown(f'<div style="font-size: 18px; text-align: center; padding-top: 100px;">{texto_exibicao}</div>',
+            unsafe_allow_html=True)
+
+# Adiciona JavaScript para manipular o estado do texto com base no hover
+st.markdown(
+    """
+    <script>
+        const elemento = document.querySelector('.vega-embed');
+        const textoExibicao = document.querySelector('.elemento-texto');
+
+        elemento.addEventListener('mouseover', () => {
+            textoExibicao.style.display = 'block';
+        });
+
+        elemento.addEventListener('mouseout', () => {
+            textoExibicao.style.display = 'none';
+        });
+    </script>
+    """,
+    unsafe_allow_html=True
+)
+
+
 st.markdown("### Foto de frente")
 uploaded_file1 = st.file_uploader("Carregue a imagem", key="file1")
 
@@ -215,7 +260,6 @@ imc_status = status_imc(result_imc)
 
 if st.button("Resultado"):
     #st.info('This is a purely informational message')
-    st.info("body", "*")
     st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
     #st.info('This is a purely informational message')
     st.write("Status GCm: ", gcm_status)
