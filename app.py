@@ -10,7 +10,7 @@ st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálc
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
 st.markdown("### Gênero:")
-gender = st.selectbox("Gênero:", ["Feminino", "Masculino"])
+gender = st.selectbox("Gênero:", ["Feminino", "Masculino"], placeholder="Selecione o gênero")
 
 if (gender == "Feminino"):
     gender = "F"
@@ -34,7 +34,7 @@ activity_factor = st.selectbox(
                                  "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
                                  "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
                                  "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"),
-                                 key="factor"
+                                 key="factor", placeholder="Selecione o fator de atividade"
                               )
 
 if (activity_factor == "Sedentário - Pouco ou nenhum exercício"):
