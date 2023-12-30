@@ -11,7 +11,7 @@ st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem d
 
 
 st.markdown("### Gênero:")
-gender = placeholder.selectbox("Gênero:", ["", "Feminino", "Masculino"], format_func=lambda x: 'Selecione o Gênero' if x == '' else x)
+gender = st.selectbox("Gênero:", ["", "Feminino", "Masculino"], format_func=lambda x: 'Selecione o Gênero' if x == '' else x)
 
 
 if (gender == "Feminino"):
