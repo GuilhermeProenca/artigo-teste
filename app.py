@@ -32,7 +32,8 @@ activity_factor = st.selectbox(
                                  "Levemente ativo - Exercício leve de 1 a 3 dias por semana",\
                                  "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
                                  "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
-                                 "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia")
+                                 "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"),
+                                 key="factor"
                               )
 
 if (activity_factor == "Sedentário - Pouco ou nenhum exercício"):
