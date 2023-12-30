@@ -214,7 +214,7 @@ if st.button("Resultado"):
     st.write(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
     st.write(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
 
-    st.write(f"Peso residual: {result_residual_weight} kg ({round(perc_residual_weight, 2)}%)")
+    st.write(f"Peso residual: {round(result_residual_weight, 2)} kg ({round(perc_residual_weight, 2)}%)")
 
     st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
 
