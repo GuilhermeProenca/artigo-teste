@@ -215,7 +215,8 @@ imc_status = status_imc(result_imc)
 
 if st.button("Resultado"):
     #st.info('This is a purely informational message')
-    st.write(f"% de gordura corporal: {round(result_gcm, 2)}", help="TESTE")
+    st.balloons("TESTE")
+    st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
     #st.info('This is a purely informational message')
     st.write("Status GCm: ", gcm_status)
 
