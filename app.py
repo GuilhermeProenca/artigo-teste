@@ -27,7 +27,7 @@ textos = {
     }
 }
 
-if(flag == 1 and idioma_selecionado == "Português"):
+
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
 opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
