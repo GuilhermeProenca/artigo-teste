@@ -14,13 +14,13 @@ textos = {
     "Português": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
-        "selecao_idioma": "Selecione o idioma:"
+        "selecao_idioma": "Selecione o idioma",
         "opcoes_idioma": ["Português", "Inglês"]
     },
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person.",
-        "selecao_idioma": "Select language:",
+        "selecao_idioma": "Select language",
         "opcoes_idioma": ["Portuguese", "English"]
     }
 }
