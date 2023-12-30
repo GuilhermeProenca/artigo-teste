@@ -9,8 +9,13 @@ from PIL import Image
 st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
+st.markdown("### Foto de frente")
+uploaded_file1 = st.file_uploader("Carregar")
 
-st.markdown("### Gênero:")
+st.markdown("### Foto de lado")
+uploaded_file2 = st.file_uploader("Carregar")
+
+st.markdown("### Gênero")
 gender = st.selectbox("Selecione o gênero", ["Feminino", "Masculino"])
 
 
