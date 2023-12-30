@@ -13,6 +13,7 @@ textos = {
     "Português": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
+        "menu_idioma": "Selecionar o idioma",
         "opcoes_idioma": ["Português", "Inglês"]
     },
     "Inglês": {
@@ -34,7 +35,7 @@ st.title(titulo)
 st.text(objetivo)
 
 # Remova e substitua o controle st.radio para evitar duplicatas
-st.radio(" ", opcoes_idioma, index=0, key=f"idioma_{idioma_selecionado}")
+idioma_selecionado = st.radio("Selecionar o idioma", opcoes_idioma, index=0, key=f"idioma_{idioma_selecionado}")
 
 
 st.write("---")
