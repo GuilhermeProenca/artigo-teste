@@ -11,11 +11,14 @@ st.text("Objetivo: Com os dados de altura, peso, idade, gênero e imagem de fren
 
 st.write("---")
 
+#import streamlit as st
+
 # Texto que será exibido ao passar o mouse sobre o botão
 texto_exibicao = "Texto ao passar o mouse"
 
 # Adiciona o botão ao Streamlit
-botao = st.button("Passe o mouse sobre mim!")
+botao_id = st.empty()
+botao = botao_id.button("Passe o mouse sobre mim!")
 
 # Adiciona o texto ao Streamlit
 st.markdown(f'<div class="elemento-texto" style="font-size: 18px; text-align: center; padding-top: 10px; display: none;">{texto_exibicao}</div>',
@@ -28,28 +31,30 @@ st.markdown(
         .elemento-texto {
             display: none;
         }
-
-        .botao:hover + .elemento-texto {
-            display: block;
-        }
     </style>
 
     <script>
-        const botao = document.querySelector('.stButton');
+        const botao = document.querySelector('.elemento-botao');
+        const textoExibicao = document.querySelector('.elemento-texto');
 
         botao.addEventListener('mouseover', () => {
-            const textoExibicao = document.querySelector('.elemento-texto');
             textoExibicao.style.display = 'block';
         });
 
         botao.addEventListener('mouseout', () => {
-            const textoExibicao = document.querySelector('.elemento-texto');
             textoExibicao.style.display = 'none';
         });
     </script>
     """,
     unsafe_allow_html=True
 )
+
+# Adiciona uma classe personalizada ao botão usando JavaScript
+script_personalizado = f"""<script>
+    const botao = document.querySelector('.stButton button');
+    botao.classList.add('elemento-botao');
+</script>"""
+botao_id.markdown(script_personalizado, unsafe_allow_html=True)
 
 
 st.markdown("### Foto de frente")
