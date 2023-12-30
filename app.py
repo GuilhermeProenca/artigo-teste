@@ -209,4 +209,4 @@ if st.button("Resultado"):
 
     st.write(f"Taxa de metabolismo basal (k/cal): {round(result_tmb, 0)}")
 
-    st.write(f"Consumo de caloria diário (k/cal): {round(result_daily_calorie, 0)})
+    st.write(f"Consumo de caloria diário (k/cal): {round(result_daily_calorie, 0)}")
