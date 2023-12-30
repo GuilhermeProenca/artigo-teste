@@ -16,7 +16,7 @@ textos = {
     "Português": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
-        "menu_idioma": "Selecione o idoma",
+        "menu_idioma": "Selecione o idioma",
         "opcoes_idioma": ["Português", "Inglês"]
     },
     "Inglês": {
@@ -45,8 +45,10 @@ else:
 st.title(titulo)
 st.text(objetivo)
 
-idioma_selecionado = st.radio(menu_idioma, opcoes_idioma, index=0, key="idioma")
-
+if(idioma_selecionado == "Português")
+    idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
+else:
+    idioma_selecionado = st.radio("Select language", ["Portuguese", "English"], index=0, key="en-us")
 
 st.write("---")
 
