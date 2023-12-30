@@ -13,13 +13,11 @@ textos = {
     "Português": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
-        "selecao_idioma": "Selecione o idioma:",
         "opcoes_idioma": ["Português", "Inglês"]
     },
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person.",
-        "selecao_idioma": "Select language:",
         "opcoes_idioma": ["Portuguese", "English"]
     }
 }
@@ -27,7 +25,6 @@ textos = {
 # Atualize os textos com base na seleção de idioma
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
-selecao_idioma_texto = textos[idioma_selecionado]["selecao_idioma"]
 opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
 
 # Atualize outros textos conforme necessário...
@@ -37,8 +34,7 @@ st.title(titulo)
 st.text(objetivo)
 
 # Atualize o texto do st.radio e as opções
-idioma_selecionado = st.radio(selecao_idioma_texto, opcoes_idioma, index=0, key="idioma2")
-
+idioma_selecionado = st.radio(" ", opcoes_idioma, index=opcoes_idioma.index(idioma_selecionado), key="idioma")
 
 st.write("---")
 
