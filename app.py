@@ -10,6 +10,7 @@ flag = 0
 
 if(flag == 0):
     idioma_selecionado = "Português"
+    flag = 1
 
 textos = {
     "Português": {
@@ -25,9 +26,14 @@ textos = {
 }
 
 # Atualize os textos com base na seleção de idioma
-titulo = textos[idioma_selecionado]["titulo"]
-objetivo = textos[idioma_selecionado]["objetivo"]
-opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
+if(flag == 1 and idioma_selecionado == "Português"):
+    titulo = textos["Português"]["titulo"]
+    objetivo = textos["Português"]["objetivo"]
+    opcoes_idioma = textos["Português"]["opcoes_idioma"]
+else:
+    titulo = textos["Inglês"]["titulo"]
+    objetivo = textos["Inglês"]["objetivo"]
+    opcoes_idioma = textos["Inglês"]["opcoes_idioma"]
 
 # Atualize outros textos conforme necessário...
 
@@ -35,11 +41,7 @@ opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
 st.title(titulo)
 st.text(objetivo)
 
-if(flag == 0 and idioma_selecionado != "Português"):
-    idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="idioma")
-    flag = 1
-else:    
-    idioma_selecionado = st.radio("Select language", opcoes_idioma, index=0, key="idioma2")
+idioma_selecionado = st.radio("Select language", opcoes_idioma, index=0, key="idioma2")
 
 
 st.write("---")
