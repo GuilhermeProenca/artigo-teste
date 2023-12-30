@@ -12,49 +12,60 @@ st.text("Objetivo: Com os dados de altura, peso, idade, gênero e imagem de fren
 st.write("---")
 
 #import streamlit as st
+import altair as alt
+#import pandas as pd
 
 # Texto que será exibido ao passar o mouse sobre o botão
 texto_exibicao = "Texto ao passar o mouse"
 
-# Adiciona o botão ao Streamlit
-botao_id = st.empty()
-botao = botao_id.button("Passe o mouse sobre mim!")
+# Dados fictícios
+dados = pd.DataFrame({'x': [1], 'y': [1]})
+
+# Criação do gráfico interativo (simulando um botão)
+grafico = alt.Chart(dados).mark_bar().encode(
+    x='x:O',
+    y='y:O',
+    tooltip=alt.Tooltip('tooltip:N')
+).properties(
+    width=100,
+    height=50
+).interactive()
+
+# Adiciona o gráfico ao Streamlit
+st.altair_chart(grafico, use_container_width=True)
 
 # Adiciona o texto ao Streamlit
 st.markdown(f'<div class="elemento-texto" style="font-size: 18px; text-align: center; padding-top: 10px; display: none;">{texto_exibicao}</div>',
             unsafe_allow_html=True)
 
-# Adiciona JavaScript e CSS para manipular o estado do texto com base no hover
+# Adiciona JavaScript para manipular o estado do texto com base no hover
 st.markdown(
     """
     <style>
         .elemento-texto {
             display: none;
         }
+
+        .grafico:hover + .elemento-texto {
+            display: block;
+        }
     </style>
 
     <script>
-        const botao = document.querySelector('.elemento-botao');
+        const grafico = document.querySelector('.vega-embed');
         const textoExibicao = document.querySelector('.elemento-texto');
 
-        botao.addEventListener('mouseover', () => {
+        grafico.addEventListener('mouseover', () => {
             textoExibicao.style.display = 'block';
         });
 
-        botao.addEventListener('mouseout', () => {
+        grafico.addEventListener('mouseout', () => {
             textoExibicao.style.display = 'none';
         });
     </script>
     """,
     unsafe_allow_html=True
 )
-
-# Adiciona uma classe personalizada ao botão usando JavaScript
-script_personalizado = f"""<script>
-    const botao = document.querySelector('.stButton button');
-    botao.classList.add('elemento-botao');
-</script>"""
-botao_id.markdown(script_personalizado, unsafe_allow_html=True)
 
 
 st.markdown("### Foto de frente")
