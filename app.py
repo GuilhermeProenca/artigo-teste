@@ -45,7 +45,7 @@ else:
 st.title(titulo)
 st.text(objetivo)
 
-if(idioma_selecionado == "Português")
+if(idioma_selecionado == "Português"):
     idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
 else:
     idioma_selecionado = st.radio("Select language", ["Portuguese", "English"], index=0, key="en-us")
