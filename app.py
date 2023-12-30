@@ -10,10 +10,10 @@ st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálc
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
 st.markdown("### Foto de frente")
-uploaded_file1 = st.file_uploader("Carregar", key="file1")
+uploaded_file1 = st.file_uploader("Carregue a imagem", key="file1")
 
 st.markdown("### Foto de lado")
-uploaded_file2 = st.file_uploader("Carregar", key="file2")
+uploaded_file2 = st.file_uploader("Carregue a imagem", key="file2")
 
 st.markdown("### Gênero")
 gender = st.selectbox("Selecione o gênero", ["Feminino", "Masculino"])
