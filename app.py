@@ -7,7 +7,9 @@ import joblib
 from PIL import Image
 
 flag = 0
-idioma_selecionado = "Português"
+
+if(flag == 0):
+    idioma_selecionado = "Português"
 
 textos = {
     "Português": {
