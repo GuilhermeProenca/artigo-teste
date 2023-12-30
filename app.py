@@ -6,35 +6,39 @@ import joblib
 
 from PIL import Image
 
-idioma_selecionado = ""
 
-if (idioma_selecionado == "" or idioma_selecionado == "Português"):
-    idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
-else:
-    idioma_selecionado = st.radio("Select the language", ["Portuguese", "English"], index=0, key="en-us")
+
+idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
+
+#idioma_selecionado = st.radio("Select the language", ["Portuguese", "English"], index=0, key="en-us")
 
 # Crie um dicionário para mapear os textos em português e inglês
 textos = {
     "Português": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
+        "selecao_idioma": "Selecione o idioma:",
+        "opcoes_idioma": ["Português", "Inglês"]
         # Adicione outros textos em português aqui...
     },
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person.",
-        # Adicione outros textos em inglês aqui...
+        "selecao_idioma": "Select language:",
+        "opcoes_idioma": ["Portuguese", "English"]
     }
 }
 
 # Atualize os textos com base na seleção de idioma
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
-# Atualize outros textos conforme necessário...
+opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
 
 # Exiba os textos no Streamlit
 st.title(titulo)
 st.text(objetivo)
+
+idioma_selecionado = st.radio(selecao_idioma, opcoes_idioma, index=0, key="en-us")
 
 st.write("---")
 
