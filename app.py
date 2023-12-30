@@ -22,6 +22,7 @@ textos = {
     }
 }
 
+idioma_selecionado = st.radio("Selecione o idioma", opcoes_idioma, index=0, key="pt-br")
 
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
@@ -30,8 +31,6 @@ menu_idioma = textos[idioma_selecionado]["menu_idioma"]
 
 st.title(titulo)
 st.text(objetivo)
-
-idioma_selecionado = st.radio("Selecione o idioma", opcoes_idioma, index=0, key="pt-br")
 
 
 st.write("---")
