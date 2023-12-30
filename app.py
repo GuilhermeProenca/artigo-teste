@@ -6,8 +6,30 @@ import joblib
 
 from PIL import Image
 
-st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
-st.text("Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
+idioma_selecionado = st.radio("Selecione o idioma:", ["Português", "Inglês"], index=0, key="idioma")
+
+# Crie um dicionário para mapear os textos em português e inglês
+textos = {
+    "Português": {
+        "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
+        "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
+        # Adicione outros textos em português aqui...
+    },
+    "Inglês": {
+        "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
+        "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person.",
+        # Adicione outros textos em inglês aqui...
+    }
+}
+
+# Atualize os textos com base na seleção de idioma
+titulo = textos[idioma_selecionado]["titulo"]
+objetivo = textos[idioma_selecionado]["objetivo"]
+# Atualize outros textos conforme necessário...
+
+# Exiba os textos no Streamlit
+st.title(titulo)
+st.text(objetivo)
 
 st.write("---")
 
