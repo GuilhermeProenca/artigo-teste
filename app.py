@@ -6,7 +6,7 @@ import joblib
 
 from PIL import Image
 
-idioma_selecionado = st.radio("Select language:", ["Português", "Inglês"], index=0, key="idioma")
+idioma_selecionado = st.radio("Selecionar o idioma", ["Português", "Inglês"], index=0, key="idioma")
 
 # Crie um dicionário para mapear os textos em português e inglês
 textos = {
@@ -33,10 +33,6 @@ opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
 # Exiba os textos no Streamlit
 st.title(titulo)
 st.text(objetivo)
-
-# Remova e substitua o controle st.radio para evitar duplicatas
-idioma_selecionado = st.radio("Selecionar o idioma", opcoes_idioma, index=0, key=f"idioma_{idioma_selecionado}")
-
 
 st.write("---")
 
