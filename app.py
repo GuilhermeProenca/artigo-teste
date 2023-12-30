@@ -16,11 +16,13 @@ textos = {
     "Português": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
+        "menu_idioma": "Selecione o idoma",
         "opcoes_idioma": ["Português", "Inglês"]
     },
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person.",
+        "menu_idioma": "Select language",
         "opcoes_idioma": ["Portuguese", "English"]
     }
 }
@@ -30,10 +32,12 @@ if(flag == 1 and idioma_selecionado == "Português"):
     titulo = textos["Português"]["titulo"]
     objetivo = textos["Português"]["objetivo"]
     opcoes_idioma = textos["Português"]["opcoes_idioma"]
+    menu_idioma = textos["Português"]["menu_idioma"]
 else:
     titulo = textos["Inglês"]["titulo"]
     objetivo = textos["Inglês"]["objetivo"]
     opcoes_idioma = textos["Inglês"]["opcoes_idioma"]
+    menu_idioma = textos["Inglês"]["menu_idioma"]
 
 # Atualize outros textos conforme necessário...
 
@@ -41,7 +45,7 @@ else:
 st.title(titulo)
 st.text(objetivo)
 
-idioma_selecionado = st.radio("Select language", opcoes_idioma, index=0, key="idioma2")
+idioma_selecionado = st.radio(menu_idioma, opcoes_idioma, index=0, key="idioma")
 
 
 st.write("---")
