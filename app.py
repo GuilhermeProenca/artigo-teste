@@ -194,21 +194,19 @@ gcm_status = status_gcm(result_gcm, gender, age)
 imc_status = status_imc(result_imc)
 
 
-print(f"% de gordura corporal: {round(result_gcm, 2)}")
-
 st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
 
-print("Status GCm: ", gcm_status)
+st.write("Status GCm: ", gcm_status)
 
-print(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
-print(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
+st.write(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
+st.write(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
 
-print(f"Peso residual: {result_residual_weight} kg ({round(perc_residual_weight, 2)}%)")
+st.write(f"Peso residual: {result_residual_weight} kg ({round(perc_residual_weight, 2)}%)")
 
-print("IMC (kg/m2): ", round(result_imc, 2))
+st.write("IMC (kg/m2): ", round(result_imc, 2))
 
-print("Status IMC: ", imc_status)
+st.write("Status IMC: ", imc_status)
 
-print("Taxa de metabolismo basal (k/cal):", round(result_tmb, 0))
+st.write("Taxa de metabolismo basal (k/cal):", round(result_tmb, 0))
 
-print("Consumo de caloria diário (k/cal):", round(result_daily_calorie, 0))
+st.write("Consumo de caloria diário (k/cal):", round(result_daily_calorie, 0))
