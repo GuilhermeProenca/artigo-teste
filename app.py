@@ -20,19 +20,24 @@ textos = {
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data,\nprovide information about a person.",
-        "menu_idioma": "Select language",
+        "menu_idioma": "Selecionar o idioma",
         "opcoes_idioma": ["Portuguese", "English"]
     }
 }
 
-# Corrigindo a linha abaixo para acessar o menu_idioma correto
-menu_idioma = textos[st.session_state.idioma_selecionado]["menu_idioma"]
-
 # Ajustando a lógica para acessar o idioma_selecionado corretamente
-idioma_selecionado = st.radio(menu_idioma, textos[st.session_state.idioma_selecionado]["opcoes_idioma"], index=0, key="idioma")
+idioma_selecionado = st.radio(textos["Português"]["menu_idioma"], textos["Português"]["opcoes_idioma"], index=0, key="idioma")
 
+# Agora, acessamos diretamente o idioma selecionado para obter título e objetivo
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
+
+# Restante do seu código permanece inalterado
+# ...
+
+# Adicione esta parte para exibir o título e o objetivo
+st.title(titulo)
+st.text(objetivo)
 
 st.write("---")
 
