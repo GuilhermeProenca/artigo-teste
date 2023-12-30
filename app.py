@@ -7,7 +7,18 @@ import joblib
 from PIL import Image
 
 if 'idioma_selecionado' not in st.session_state:
-    st.session_state.idioma_selecionado = "English"
+    st.session_state.idioma_selecionado = "Português"
+
+def init_session_state():
+    return {'idioma_selecionado': 'Português'}
+
+# Obtém o estado da sessão
+session_state = st.session_state
+
+# Verifica se a variável já está na sessão
+if not hasattr(session_state, 'idioma_selecionado'):
+    # Se não estiver na sessão, inicializa a variável
+    session_state.update(init_session_state())
 
 textos = {
     "Português": {
