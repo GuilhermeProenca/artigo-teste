@@ -10,8 +10,16 @@ st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálc
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
 
+DEFAULT = '< PICK A VALUE >'
+
+def selectbox_with_default(text, values, default=DEFAULT, sidebar=False):
+    func = st.sidebar.selectbox if sidebar else st.selectbox
+    return func(text, np.insert(np.array(values, object), 0, default))
+
 st.markdown("### Gênero:")
-gender = st.selectbox("Gênero:", ["", "Feminino", "Masculino"], format_func=lambda x: 'Selecione o Gênero' if x == '' else x)
+selectbox_with_default('some title', ["Feminino", "Masculino"])
+
+#gender = st.selectbox("Gênero:", ["Feminino", "Masculino"])
 
 
 if (gender == "Feminino"):
@@ -36,7 +44,7 @@ activity_factor = st.selectbox(
                                  "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
                                  "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
                                  "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"),
-                                 key="factor", placeholder="Selecione o fator de atividade"
+                                 key="factor"
                               )
 
 if (activity_factor == "Sedentário - Pouco ou nenhum exercício"):
