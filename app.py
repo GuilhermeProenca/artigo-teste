@@ -181,11 +181,11 @@ def status_imc(result_imc):
     elif(result_imc <= 29.99):
         status_imc = "Acima do peso"
     elif(result_imc <= 34.99):
-        status_imc = "Obesage I"
+        status_imc = "Obesidade I"
     elif(result_imc <= 39.99):
-        status_imc = "Obesage II (severa)"
+        status_imc = "Obesidade II (severa)"
     else:
-        status_imc = "Obesage III (mórbida)"
+        status_imc = "Obesidade III (mórbida)"
         
     return status_imc
 
