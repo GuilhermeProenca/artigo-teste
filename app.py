@@ -7,7 +7,7 @@ import joblib
 from PIL import Image
 
 st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
-st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
+st.text("Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
 st.markdown("### Foto de frente")
 uploaded_file1 = st.file_uploader("Carregue a imagem", key="file1")
@@ -214,13 +214,14 @@ gcm_status = status_gcm(result_gcm, gender, age)
 imc_status = status_imc(result_imc)
 
 if st.button("Resultado"):
+    st.info('This is a purely informational message', icon="ℹ️")
     st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
-
+    st.info('This is a purely informational message', icon="ℹ️")
     st.write("Status GCm: ", gcm_status)
 
     st.write(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
     st.write(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
-
+    st.info('This is a purely informational message', icon="ℹ️")
     st.write(f"Peso residual: {round(result_residual_weight, 2)} kg ({round(perc_residual_weight, 2)}%)")
 
     st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
