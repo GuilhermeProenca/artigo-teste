@@ -6,7 +6,8 @@ import joblib
 
 from PIL import Image
 
-idioma_selecionado = "Português"
+if 'idioma_selecionado' not in st.session_state:
+    st.session_state.idioma_selecionado = "Português"
 
 textos = {
     "Português": {
