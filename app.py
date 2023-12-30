@@ -196,6 +196,8 @@ imc_status = status_imc(result_imc)
 
 print(f"% de gordura corporal: {round(result_gcm, 2)}")
 
+st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
+
 print("Status GCm: ", gcm_status)
 
 print(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
