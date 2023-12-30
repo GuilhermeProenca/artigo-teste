@@ -5,7 +5,6 @@ import math
 import joblib
 
 from PIL import Image
-from streamlit_extras.no_default_selectbox import selectbox
 
 st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
