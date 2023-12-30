@@ -25,25 +25,15 @@ textos = {
     }
 }
 
-# Ajustando a lógica para acessar o idioma_selecionado corretamente
-idioma_selecionado = st.radio(textos["Português"]["menu_idioma"], textos["Português"]["opcoes_idioma"], index=0, key="idioma")
+idioma_selecionado = st.radio(textos[idioma_selecionado]["menu_idioma"], textos[idioma_selecionado]["opcoes_idioma"], index=0, key="idioma")
 
-# Agora, acessamos diretamente o idioma selecionado para obter título e objetivo
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
 menu_idioma = textos[idioma_selecionado]["menu_idioma"]
 opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
 
-# Restante do seu código permanece inalterado
-# ...
-
-# Adicione esta parte para exibir o título e o objetivo
 st.title(titulo)
 st.text(objetivo)
-
-# Agora, use as variáveis menu_idioma e opcoes_idioma para o st.radio
-idioma_selecionado = st.radio(menu_idioma, opcoes_idioma, index=0, key="idioma")
-
 
 st.write("---")
 
