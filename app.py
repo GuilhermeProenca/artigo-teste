@@ -37,7 +37,7 @@ st.title(titulo)
 st.text(objetivo)
 
 # Atualize o texto do st.radio e as opções
-idioma_selecionado = st.radio(selecao_idioma_texto, opcoes_idioma, index=0, key="idioma")
+idioma_selecionado = st.radio(selecao_idioma_texto, opcoes_idioma, index=0, key="idioma2")
 
 
 st.write("---")
