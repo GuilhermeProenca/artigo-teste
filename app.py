@@ -9,17 +9,8 @@ from PIL import Image
 st.title("Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física")
 st.text("Objetivo: Dada informações de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.")
 
-
-DEFAULT = '< PICK A VALUE >'
-
-def selectbox_with_default(text, values, default=DEFAULT, sidebar=False):
-    func = st.sidebar.selectbox if sidebar else st.selectbox
-    return func(text, np.insert(np.array(values, object), 0, default))
-
 st.markdown("### Gênero:")
-selectbox_with_default('some title', ["Feminino", "Masculino"])
-
-#gender = st.selectbox("Gênero:", ["Feminino", "Masculino"])
+gender = st.selectbox("Selecione o gênero:", ["Feminino", "Masculino"])
 
 
 if (gender == "Feminino"):
