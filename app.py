@@ -6,11 +6,6 @@ import joblib
 
 from PIL import Image
 
-flag = 0
-
-if(flag == 0):
-    idioma_selecionado = "Português"
-    flag = 1
 
 textos = {
     "Português": {
@@ -36,12 +31,8 @@ menu_idioma = textos[idioma_selecionado]["menu_idioma"]
 st.title(titulo)
 st.text(objetivo)
 
-if(idioma_selecionado == "Português"):
-    idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
-    flag = 1
-else:
-    idioma_selecionado = st.radio("Select language", ["Portuguese", "English"], index=0, key="en-us")
-    flag = 1
+idioma_selecionado = st.radio("Selecione o idioma", opcoes_idioma, index=0, key="pt-br")
+
 
 st.write("---")
 
