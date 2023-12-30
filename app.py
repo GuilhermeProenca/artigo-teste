@@ -35,8 +35,8 @@ opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
 st.title(titulo)
 st.text(objetivo)
 
-if(flag == 0):
-    idioma_selecionado = st.radio("Selecione o idioma:", ["Português", "Inglês"], index=0, key="idioma")
+if(flag == 0 and dioma_selecionado != "Português"):
+    idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="idioma")
     flag = 1
 else:    
     idioma_selecionado = st.radio("Select language", opcoes_idioma, index=0, key="idioma2")
