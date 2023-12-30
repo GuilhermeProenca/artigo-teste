@@ -8,7 +8,7 @@ from PIL import Image
 
 idioma_selecionado = ""
 
-if idioma_selecionado
+if (idioma_selecionado != "Inglês"):
     idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
 else:
     idioma_selecionado = st.radio("Select the language", ["Portuguese", "English"], index=0, key="en-us")
