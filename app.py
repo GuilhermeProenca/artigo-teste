@@ -11,41 +11,39 @@ st.text("Objetivo: Com os dados de altura, peso, idade, gênero e imagem de fren
 
 st.write("---")
 
-#import streamlit as st
-import altair as alt
-
-# Texto que será exibido ao passar o mouse sobre o elemento
+# Texto que será exibido ao passar o mouse sobre o botão
 texto_exibicao = "Texto ao passar o mouse"
 
-# Criação do gráfico que funcionará como a área sensível ao mouse
-chart = alt.Chart().mark_point().encode(
-    x='x:Q',
-    y='y:Q',
-    tooltip=alt.Tooltip('tooltip:N')
-).properties(
-    width=300,
-    height=200
-).interactive()
+# Adiciona o botão ao Streamlit
+botao = st.button("Passe o mouse sobre mim!")
 
-# Adiciona o gráfico ao Streamlit
-st.altair_chart(chart, use_container_width=True)
-
-# Adiciona o texto ao gráfico
-st.markdown(f'<div style="font-size: 18px; text-align: center; padding-top: 100px;">{texto_exibicao}</div>',
+# Adiciona o texto ao Streamlit
+st.markdown(f'<div class="elemento-texto" style="font-size: 18px; text-align: center; padding-top: 10px; display: none;">{texto_exibicao}</div>',
             unsafe_allow_html=True)
 
-# Adiciona JavaScript para manipular o estado do texto com base no hover
+# Adiciona JavaScript e CSS para manipular o estado do texto com base no hover
 st.markdown(
     """
-    <script>
-        const elemento = document.querySelector('.vega-embed');
-        const textoExibicao = document.querySelector('.elemento-texto');
+    <style>
+        .elemento-texto {
+            display: none;
+        }
 
-        elemento.addEventListener('mouseover', () => {
+        .botao:hover + .elemento-texto {
+            display: block;
+        }
+    </style>
+
+    <script>
+        const botao = document.querySelector('.stButton');
+
+        botao.addEventListener('mouseover', () => {
+            const textoExibicao = document.querySelector('.elemento-texto');
             textoExibicao.style.display = 'block';
         });
 
-        elemento.addEventListener('mouseout', () => {
+        botao.addEventListener('mouseout', () => {
+            const textoExibicao = document.querySelector('.elemento-texto');
             textoExibicao.style.display = 'none';
         });
     </script>
