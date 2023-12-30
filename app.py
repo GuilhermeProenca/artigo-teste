@@ -27,28 +27,21 @@ textos = {
     }
 }
 
-# Atualize os textos com base na seleção de idioma
 if(flag == 1 and idioma_selecionado == "Português"):
-    titulo = textos["Português"]["titulo"]
-    objetivo = textos["Português"]["objetivo"]
-    opcoes_idioma = textos["Português"]["opcoes_idioma"]
-    menu_idioma = textos["Português"]["menu_idioma"]
-else:
-    titulo = textos["Inglês"]["titulo"]
-    objetivo = textos["Inglês"]["objetivo"]
-    opcoes_idioma = textos["Inglês"]["opcoes_idioma"]
-    menu_idioma = textos["Inglês"]["menu_idioma"]
+titulo = textos[idioma_selecionado]["titulo"]
+objetivo = textos[idioma_selecionado]["objetivo"]
+opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
+menu_idioma = textos[idioma_selecionado]["menu_idioma"]
 
-# Atualize outros textos conforme necessário...
-
-# Exiba os textos no Streamlit
 st.title(titulo)
 st.text(objetivo)
 
 if(idioma_selecionado == "Português"):
     idioma_selecionado = st.radio("Selecione o idioma", ["Português", "Inglês"], index=0, key="pt-br")
+    flag = 1
 else:
     idioma_selecionado = st.radio("Select language", ["Portuguese", "English"], index=0, key="en-us")
+    flag = 1
 
 st.write("---")
 
