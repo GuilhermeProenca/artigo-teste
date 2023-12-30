@@ -7,6 +7,7 @@ import joblib
 from PIL import Image
 
 flag = 0
+idioma_selecionado = ""
 
 textos = {
     "Português": {
@@ -36,7 +37,7 @@ if(flag == 0):
     idioma_selecionado = st.radio("Selecione o idioma:", ["Português", "Inglês"], index=0, key="idioma")
     flag = 1
 else:    
-    idioma_selecionado = st.radio("Select language", opcoes_idioma, index=0, key=f"idioma_{idioma_selecionado}")
+    idioma_selecionado = st.radio("Select language", opcoes_idioma, index=0, key="idioma2")
 
 
 st.write("---")
