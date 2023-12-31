@@ -6,7 +6,7 @@ import joblib
 
 from PIL import Image
 
-idioma_selecionado = st.radio("Select language:", ["Português", "Inglês"], index=0, key="idioma")
+idioma_selecionado = st.button("Alterar 0 idioma - Change the language")
 
 # Crie um dicionário para mapear os textos em português e inglês
 textos = {
@@ -19,7 +19,7 @@ textos = {
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person.",
-        "menu_idioma": "Select language",
+        "menu_idioma": "Select the language",
         "opcoes_idioma": ["Portuguese", "English"]
     }
 }
