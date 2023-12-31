@@ -102,7 +102,7 @@ st.markdown(f"### {peso}")
 weight = st.number_input(exemplo_peso, format="%.2f", min_value=40.0, step=0.10)
 
 st.markdown(f"### {fator}")
-activity_factor = st.selectbox(seleciona_fator, menu_fator, index=0, key="factor", help="TESTE 1, 2, 3...")
+activity_factor = st.selectbox(seleciona_fator, menu_fator, index=0, key="factor")
 
 neck_measure = 38.0
 measure_waist = 75.0
@@ -284,9 +284,9 @@ imc_status = status_imc(result_imc)
 
 if st.button("Resultado"):
     st.write("---")
-    st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
+    st.write(f"% de gordura corporal: {round(result_gcm, 2)}", help="TESTE 1, 2, 3...")
 
-    st.write("Status GCm: ", gcm_status)
+    st.write("Status GCm: ", gcm_status, help="AJUDA!!!!")
 
     st.write(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
     st.write(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
