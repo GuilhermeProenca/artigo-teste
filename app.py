@@ -284,9 +284,10 @@ imc_status = status_imc(result_imc)
 
 if st.button("Resultado"):
     st.write("---")
-    st.write(f"% de gordura corporal: {round(result_gcm, 2)}", help="TESTE 1, 2, 3...")
+    st.write(" ", help="TESTE 1, 2, 3...")
+    st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
 
-    st.write("Status GCm: ", gcm_status, help="AJUDA!!!!")
+    st.write("Status GCm: ", gcm_status)
 
     st.write(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
     st.write(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
