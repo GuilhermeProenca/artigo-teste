@@ -31,7 +31,11 @@ textos = {
                       "Levemente ativo - Exercício leve de 1 a 3 dias por semana",\
                       "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
                       "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
-                      "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"]
+                      "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"],
+        "status gcm": ["Magreza",\
+                       "Normal",\
+                       "Sobrepeso",\
+                       "Obesidade"]
     },
     "Inglês - English": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -199,42 +203,42 @@ def status_gcm(result_gcm, gender, age):
            (age <= 39 and result_gcm <= 20.0) or \
            (age <= 59 and result_gcm <= 22.0) or \
            (age >= 60 and result_gcm <= 23.0)):
-            status_gcm = "Magreza"
+            status_gcm = textos[idioma_selecionado]["status gcm"][0]
         elif((age == 18 and result_gcm <= 30.0) or \
             (age == 19 and result_gcm <= 31.0) or \
             (age <= 39 and result_gcm <= 32.0) or \
             (age <= 59 and result_gcm <= 33.0) or \
             (age >= 60 and result_gcm <= 35.0)):
-            status_gcm = "Normal"
+            status_gcm = textos[idioma_selecionado]["status gcm"][1]
         elif((age == 18 and result_gcm <= 35.0) or \
             (age == 19 and result_gcm <= 36.0) or \
             (age <= 39 and result_gcm <= 38.0) or \
             (age <= 59 and result_gcm <= 39.0) or \
             (age >= 60 and result_gcm <= 41.0)):
-            status_gcm = "Sobrepeso"
+            status_gcm = textos[idioma_selecionado]["status gcm"][2]
         else:
-            status_gcm = "Obesidade"
+            status_gcm = textos[idioma_selecionado]["status gcm"][3]
     else:
         if((age == 18 and result_gcm <= 9.0) or \
            (age == 19 and result_gcm <= 8.0) or \
            (age <= 39 and result_gcm <= 7.0) or \
            (age <= 59 and result_gcm <= 10.0) or \
            (age >= 60 and result_gcm <= 12.0)):
-            status_gcm = "Magreza"
+            status_gcm = textos[idioma_selecionado]["status gcm"][0]
         elif((age == 18 and result_gcm <= 19.0) or \
             (age == 19 and result_gcm <= 19.0) or \
             (age <= 39 and result_gcm <= 19.0) or \
             (age <= 59 and result_gcm <= 21.0) or \
             (age >= 60 and result_gcm <= 24.0)):
-            status_gcm = "Normal"
+            status_gcm = textos[idioma_selecionado]["status gcm"][1]
         elif((age == 18 and result_gcm <= 23.0) or \
             (age == 19 and result_gcm <= 23.0) or \
             (age <= 39 and result_gcm <= 24.0) or \
             (age <= 59 and result_gcm <= 27.0) or \
             (age >= 60 and result_gcm <= 29.0)):
-            status_gcm = "Sobrepeso"
+            status_gcm = textos[idioma_selecionado]["status gcm"][2]
         else:
-            status_gcm = "Obesidade"
+            status_gcm = textos[idioma_selecionado]["status gcm"][3]
             
     return status_gcm
 
