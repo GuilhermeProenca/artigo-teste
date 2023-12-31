@@ -6,23 +6,33 @@ import joblib
 
 from PIL import Image
 
-idioma_selecionado = st.radio("Selecionar o idioma - Select the language", ["Português - Portuguese", "Inglês - English"], index=0, key="idioma")
+idioma_selecionado = st.radio("Selecione o idioma - Select the language", ["Português - Portuguese", "Inglês - English"], index=0, key="language")
 
 # Crie um dicionário para mapear os textos em português e inglês
 textos = {
     "Português - Portuguese": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
-        "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa."
+        "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.",
+        "foto de frente": "Foto de frente",
+        "foto de lado": "Foto de lado",
+        "carregar": "Carregue a imagem"
     },
     "Inglês - English": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
-        "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person."
+        "objetivo": "Objective: With height, weight, age, gender, and front/side image data,\nprovide information about a person.",
+        "foto de frente": "Front photo",
+        "foto de lado": "Side photo",
+        "carregar": "Upload the image"
     }
 }
 
 # Atualize os textos com base na seleção de idioma
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
+foto_de_frente = textos[idioma_selecionado]["foto de frente"]
+foto_de_lado = textos[idioma_selecionado]["foto de lado"]
+carregar = textos[idioma_selecionado]["carregar"]
+
 
 # Atualize outros textos conforme necessário...
 
@@ -32,11 +42,11 @@ st.text(objetivo)
 
 st.write("---")
 
-st.markdown("### Foto de frente")
-uploaded_file1 = st.file_uploader("Carregue a imagem", key="file1")
+st.markdown(f"### {foto_de_frente}")
+uploaded_file1 = st.file_uploader(carregar, key="file1")
 
-st.markdown("### Foto de lado")
-uploaded_file2 = st.file_uploader("Carregue a imagem", key="file2")
+st.markdown(f"### {foto_de_lado}")
+uploaded_file2 = st.file_uploader(carregar, key="file2")
 
 st.markdown("### Gênero")
 gender = st.selectbox("Selecione o gênero", ["Feminino", "Masculino"])
