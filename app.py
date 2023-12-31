@@ -284,7 +284,7 @@ imc_status = status_imc(result_imc)
 
 if st.button("Resultado"):
     st.write("---")
-    st.title(" ", help="TESTE 1, 2, 3...")
+    st.text(" ", help="TESTE 1, 2, 3...")
     st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
 
     st.write("Status GCm: ", gcm_status)
