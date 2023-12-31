@@ -58,7 +58,11 @@ textos = {
                        "Lightly Active - Light exercise 1 to 3 days a week",\
                        "Moderately active - Plays sports 3 to 5 days a week",\
                        "Very active - Intense exercise 5 to 6 days a week",\
-                       "Extremely active - Intense exercise daily or up to twice a day"]
+                       "Extremely active - Intense exercise daily or up to twice a day"],
+        "status gcm": ["Thinness",\
+                       "Normal",\
+                       "Overweight",\
+                       "Obesity"]
     }
 }
 
