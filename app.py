@@ -39,8 +39,8 @@ foto_de_frente = textos[idioma_selecionado]["foto de frente"]
 foto_de_lado = textos[idioma_selecionado]["foto de lado"]
 carregar = textos[idioma_selecionado]["carregar"]
 genero = textos[idioma_selecionado]["genero"]
-seleciona_genero = textos[idioma_selecionado]["seleciona_genero"]
-menu_genero = textos[idioma_selecionado]["menu_genero"]
+seleciona_genero = textos[idioma_selecionado]["seleciona genero"]
+menu_genero = textos[idioma_selecionado]["menu genero"]
 
 # Atualize outros textos conforme necessário...
 
