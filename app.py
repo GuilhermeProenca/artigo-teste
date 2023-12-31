@@ -8,7 +8,7 @@ from PIL import Image
 
 idioma_selecionado = st.radio("Selecione o idioma - Select the language", ["Português - Portuguese", "Inglês - English"], index=0, key="language")
 
-# Crie um dicionário para mapear os textos em português e inglês
+# Dicionário para mapear os textos em português e inglês
 textos = {
     "Português - Portuguese": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
@@ -17,8 +17,14 @@ textos = {
         "foto de lado": "Foto de lado",
         "carregar": "Carregue a imagem",
         "genero": "Gênero",
-        "seleciona genero": "Selecione o genero",
-        "menu genero": ["Feminino", "Masculino"]
+        "seleciona genero": "Selecione o gênero",
+        "menu genero": ["Feminino", "Masculino"],
+        "idade": "Idade",
+        "exemplo idade": "Exemplo: 35 anos",
+        "altura": "Altura",
+        "exemplo altura": "Exemplo: 170 cm",
+        "peso": "Peso",
+        "exemplo peso": "Exemplo: 80 kg"
     },
     "Inglês - English": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -28,11 +34,17 @@ textos = {
         "carregar": "Upload the image",
         "genero": "Gender",
         "seleciona genero": "Select the genre",
-        "menu genero": ["Female", "Male"]
+        "menu genero": ["Female", "Male"],
+        "idade": "Age",
+        "exemplo idade": "Example: 35 years",
+        "altura": "Height",
+        "exemplo altura": "Example: 170 cm",
+        "peso": "Weight",
+        "exemplo peso": "Example: 80 kg"
     }
 }
 
-# Atualize os textos com base na seleção de idioma
+# Atualiza os textos com base na seleção de idioma
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
 foto_de_frente = textos[idioma_selecionado]["foto de frente"]
@@ -41,10 +53,14 @@ carregar = textos[idioma_selecionado]["carregar"]
 genero = textos[idioma_selecionado]["genero"]
 seleciona_genero = textos[idioma_selecionado]["seleciona genero"]
 menu_genero = textos[idioma_selecionado]["menu genero"]
+idade = textos[idioma_selecionado]["idade"]
+exemplo_idade = textos[idioma_selecionado]["exemplo idade"]
+altura = textos[idioma_selecionado]["altura"]
+exemplo_altura = textos[idioma_selecionado]["exemplo altura"]
+peso = textos[idioma_selecionado]["peso"]
+exemplo_peso = textos[idioma_selecionado]["exemplo peso"]
 
-# Atualize outros textos conforme necessário...
-
-# Exiba os textos no Streamlit
+# Exibição dos textos no Streamlit
 st.title(titulo)
 st.text(objetivo)
 
@@ -59,20 +75,14 @@ uploaded_file2 = st.file_uploader(carregar, key="file2")
 st.markdown(f"### {genero}")
 gender = st.selectbox(seleciona_genero, menu_genero)
 
+st.markdown(f"### {idade}")
+age = st.number_input(exemplo_idade, format="%i", min_value=18)
 
-if (gender == "Feminino" or gender == "Female"):
-    gender = "F"
-else:
-    gender = "M"
+st.markdown(f"### {altura}")
+measure_height = st.number_input(exemplo_altura, format="%.2f", min_value=100.0, step=0.10)
 
-st.markdown("### Idade")
-age = st.number_input("Exemplo: 35 anos", format="%i", min_value=18)
-
-st.markdown("### Altura")
-measure_height = st.number_input("Exemplo: 170 cm", format="%.2f", min_value=100.0, step=0.10)
-
-st.markdown("### Peso")
-weight = st.number_input("Exemplo: 80 kg", format="%.2f", min_value=40.0, step=0.10)
+st.markdown(f"### {peso}")
+weight = st.number_input(exemplo_peso, format="%.2f", min_value=40.0, step=0.10)
 
 st.markdown("### Fator de atividade")
 activity_factor = st.selectbox(
@@ -85,6 +95,16 @@ activity_factor = st.selectbox(
                                  key="factor"
                               )
 
+neck_measure = 38.0
+measure_waist = 75.0
+hip_measure = 90.0
+
+# Coversões de variáveis
+if (gender == "Feminino" or gender == "Female"):
+    gender = "F"
+else:
+    gender = "M"
+
 if (activity_factor == "Sedentário - Pouco ou nenhum exercício"):
     activity_factor = 0
 elif(activity_factor == "Levemente ativo - Exercício leve de 1 a 3 dias por semana"):
@@ -96,10 +116,7 @@ elif(activity_factor == "Muito ativo - Exercícios intensos de 5 a 6 dias por se
 else:
     activity_factor = 4
 
-neck_measure = 38.0
-measure_waist = 75.0
-hip_measure = 90.0
-
+# Funções dos cálculos
 def calc_bioimpedance(gender, measure_height, neck_measure, measure_waist, hip_measure):
 
     if (gender.upper() == "F"):
