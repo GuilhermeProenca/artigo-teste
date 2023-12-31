@@ -108,7 +108,7 @@ neck_measure = 38.0
 measure_waist = 75.0
 hip_measure = 90.0
 
-st.write(activity_factor.index)
+#st.write(activity_factor.index)
 
 # Coversão de variáveis
 if (gender == "Feminino" or gender == "Female"):
