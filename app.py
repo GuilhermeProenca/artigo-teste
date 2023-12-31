@@ -6,45 +6,35 @@ import joblib
 
 from PIL import Image
 
-if 'idioma_selecionado' not in st.session_state:
-    st.session_state.idioma_selecionado = "Português"
+idioma_selecionado = st.radio("Select language:", ["Português", "Inglês"], index=0, key="idioma")
 
-def init_session_state():
-    return {'idioma_selecionado': 'Português'}
-
-# Obtém o estado da sessão
-session_state = st.session_state
-
-# Verifica se a variável já está na sessão
-if not hasattr(session_state, 'idioma_selecionado'):
-    # Se não estiver na sessão, inicializa a variável
-    session_state.update(init_session_state())
-
+# Crie um dicionário para mapear os textos em português e inglês
 textos = {
     "Português": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
-        "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.",
-        "menu_idioma": "Selecionar o idioma",
+        "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa.",
         "opcoes_idioma": ["Português", "Inglês"]
     },
     "Inglês": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
-        "objetivo": "Objective: With height, weight, age, gender, and front/side image data,\nprovide information about a person.",
-        "menu_idioma": "Select language",
+        "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person.",
         "opcoes_idioma": ["Portuguese", "English"]
     }
 }
 
-teste = st.session_state.idioma_selecionado
-idioma_selecionado = st.radio(textos[teste]["menu_idioma"], textos[teste]["opcoes_idioma"], index=0, key="idioma")
-
+# Atualize os textos com base na seleção de idioma
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
-menu_idioma = textos[idioma_selecionado]["menu_idioma"]
 opcoes_idioma = textos[idioma_selecionado]["opcoes_idioma"]
 
+# Atualize outros textos conforme necessário...
+
+# Exiba os textos no Streamlit
 st.title(titulo)
 st.text(objetivo)
+
+# Atualize o texto do st.radio e as opções
+idioma_selecionado = st.radio(" ", opcoes_idioma, index=0, key=f"idioma_{idioma_selecionado}")
 
 st.write("---")
 
