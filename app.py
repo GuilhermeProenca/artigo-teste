@@ -6,7 +6,7 @@ import joblib
 
 from PIL import Image
 
-idioma_selecionado = st.button("Alterar 0 idioma - Change the language")
+idioma_selecionado = st.radio(" ", ["Português", "Inglês"], index=0, key="idioma")
 
 # Crie um dicionário para mapear os textos em português e inglês
 textos = {
