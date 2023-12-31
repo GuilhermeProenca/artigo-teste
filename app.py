@@ -108,7 +108,6 @@ neck_measure = 38.0
 measure_waist = 75.0
 hip_measure = 90.0
 
-#st.write(activity_factor.index)
 
 # Coversão de variáveis
 if (gender == "Feminino" or gender == "Female"):
@@ -116,16 +115,6 @@ if (gender == "Feminino" or gender == "Female"):
 else:
     gender = "M"
 
-if (activity_factor == "Sedentário - Pouco ou nenhum exercício"):
-    activity_factor = 0
-elif(activity_factor == "Levemente ativo - Exercício leve de 1 a 3 dias por semana"):
-    activity_factor = 1
-elif(activity_factor == "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana"):
-    activity_factor = 2
-elif(activity_factor == "Muito ativo - Exercícios intensos de 5 a 6 dias por semana"):
-    activity_factor = 3
-else:
-    activity_factor = 4
 
 # Funções dos cálculos
 def calc_bioimpedance(gender, measure_height, neck_measure, measure_waist, hip_measure):
@@ -172,13 +161,17 @@ def calc_tmb(weight, measure_height, age):
 
 def calc_daily_calorie(result_tmb, activity_factor):
     
-    if(activity_factor == 0):
+    if (activity_factor == "Sedentário - Pouco ou nenhum exercício" or \
+        activity_factor == "Sedentary - Little or no exercise"):
         daily_calorie = result_tmb * 1.2     
-    elif(activity_factor == 1):
+    elif (activity_factor == "Levemente ativo - Exercício leve de 1 a 3 dias por semana" or \
+          activity_factor == "Lightly Active - Light exercise 1 to 3 days a week"):
         daily_calorie = result_tmb * 1.375    
-    elif(activity_factor == 2):
+    elif (activity_factor == "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana" or \
+          activity_factor == "Moderately active - Plays sports 3 to 5 days a week"):
         daily_calorie = result_tmb * 1.55  
-    elif(activity_factor == 3):
+    elif (activity_factor == "Muito ativo - Exercícios intensos de 5 a 6 dias por semana" or \
+          activity_factor =="Very active - Intense exercise 5 to 6 days a week"):
         daily_calorie = result_tmb * 1.725
     else:
         daily_calorie = result_tmb * 1.9
