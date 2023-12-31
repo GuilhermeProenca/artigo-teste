@@ -15,14 +15,20 @@ textos = {
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado,\nfornecer informações sobre uma pessoa.",
         "foto de frente": "Foto de frente",
         "foto de lado": "Foto de lado",
-        "carregar": "Carregue a imagem"
+        "carregar": "Carregue a imagem",
+        "genero": "Gênero",
+        "seleciona genero": "Selecione o genero",
+        "menu genero": ["Feminino", "Masculino"]
     },
     "Inglês - English": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data,\nprovide information about a person.",
         "foto de frente": "Front photo",
         "foto de lado": "Side photo",
-        "carregar": "Upload the image"
+        "carregar": "Upload the image",
+        "genero": "Gender",
+        "seleciona genero": "Select the genre",
+        "menu genero": ["Female", "Male"]
     }
 }
 
@@ -32,7 +38,9 @@ objetivo = textos[idioma_selecionado]["objetivo"]
 foto_de_frente = textos[idioma_selecionado]["foto de frente"]
 foto_de_lado = textos[idioma_selecionado]["foto de lado"]
 carregar = textos[idioma_selecionado]["carregar"]
-
+genero = textos[idioma_selecionado]["genero"]
+seleciona_genero = textos[idioma_selecionado]["seleciona_genero"]
+menu_genero = textos[idioma_selecionado]["menu_genero"]
 
 # Atualize outros textos conforme necessário...
 
@@ -48,11 +56,11 @@ uploaded_file1 = st.file_uploader(carregar, key="file1")
 st.markdown(f"### {foto_de_lado}")
 uploaded_file2 = st.file_uploader(carregar, key="file2")
 
-st.markdown("### Gênero")
-gender = st.selectbox("Selecione o gênero", ["Feminino", "Masculino"])
+st.markdown(f"### {genero}")
+gender = st.selectbox(seleciona_genero, menu_genero)
 
 
-if (gender == "Feminino"):
+if (gender == "Feminino" or gender == "Female"):
     gender = "F"
 else:
     gender = "M"
