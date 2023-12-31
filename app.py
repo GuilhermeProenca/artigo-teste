@@ -102,7 +102,7 @@ st.markdown(f"### {peso}")
 weight = st.number_input(exemplo_peso, format="%.2f", min_value=40.0, step=0.10)
 
 st.markdown(f"### {fator}")
-activity_factor = st.selectbox(seleciona_fator, menu_fator, index=0, key="factor")
+activity_factor = st.selectbox(seleciona_fator, menu_fator, index=0, key="factor", help="TESTE 1, 2, 3...")
 
 neck_measure = 38.0
 measure_waist = 75.0
