@@ -24,7 +24,14 @@ textos = {
         "altura": "Altura",
         "exemplo altura": "Exemplo: 170 cm",
         "peso": "Peso",
-        "exemplo peso": "Exemplo: 80 kg"
+        "exemplo peso": "Exemplo: 80 kg",
+        "fator": "Fator de atividade",
+        "seleciona fator": "Selecione uma opção",
+        "menu fator": ["Sedentário - Pouco ou nenhum exercício", \
+                      "Levemente ativo - Exercício leve de 1 a 3 dias por semana",\
+                      "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
+                      "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
+                      "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"]
     },
     "Inglês - English": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -40,7 +47,14 @@ textos = {
         "altura": "Height",
         "exemplo altura": "Example: 170 cm",
         "peso": "Weight",
-        "exemplo peso": "Example: 80 kg"
+        "exemplo peso": "Example: 80 kg",
+        "fator": "Activity factor",
+        "seleciona fator": "Select an option",
+        "menu fator": ["Sedentary - Little or no exercise", \
+                       "Lightly Active - Light exercise 1 to 3 days a week",\
+                       "Moderately active - Plays sports 3 to 5 days a week",\
+                       "Very active - Intense exercise 5 to 6 days a week",\
+                       "Extremely active - Intense exercise daily or up to twice a day"]
     }
 }
 
@@ -59,6 +73,9 @@ altura = textos[idioma_selecionado]["altura"]
 exemplo_altura = textos[idioma_selecionado]["exemplo altura"]
 peso = textos[idioma_selecionado]["peso"]
 exemplo_peso = textos[idioma_selecionado]["exemplo peso"]
+fator = textos[idioma_selecionado]["fator"]
+seleciona_fator = textos[idioma_selecionado]["seleciona fator"]
+menu_fator = textos[idioma_selecionado]["menu fator"]
 
 # Exibição dos textos no Streamlit
 st.title(titulo)
@@ -84,22 +101,16 @@ measure_height = st.number_input(exemplo_altura, format="%.2f", min_value=100.0,
 st.markdown(f"### {peso}")
 weight = st.number_input(exemplo_peso, format="%.2f", min_value=40.0, step=0.10)
 
-st.markdown("### Fator de atividade")
-activity_factor = st.selectbox(
-                                "Selecione uma opção",
-                                ("Sedentário - Pouco ou nenhum exercício", \
-                                 "Levemente ativo - Exercício leve de 1 a 3 dias por semana",\
-                                 "Moderadamente ativo - Pratica esportes de 3 a 5 dias por semana",\
-                                 "Muito ativo - Exercícios intensos de 5 a 6 dias por semana",\
-                                 "Extremamente ativo - Exercícios intensos diariamente ou até 2 vezes por dia"),
-                                 key="factor"
-                              )
+st.markdown(f"### {fator}")
+activity_factor = st.selectbox(seleciona_fator, menu_fator, index=0, key="factor")
 
 neck_measure = 38.0
 measure_waist = 75.0
 hip_measure = 90.0
 
-# Coversões de variáveis
+st.write(activity_factor.index)
+
+# Coversão de variáveis
 if (gender == "Feminino" or gender == "Female"):
     gender = "F"
 else:
@@ -272,14 +283,14 @@ gcm_status = status_gcm(result_gcm, gender, age)
 imc_status = status_imc(result_imc)
 
 if st.button("Resultado"):
-    #st.info('This is a purely informational message')
+    st.write("---")
     st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
-    #st.info('This is a purely informational message')
+
     st.write("Status GCm: ", gcm_status)
 
     st.write(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
     st.write(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
-    #st.info('This is a purely informational message')
+
     st.write(f"Peso residual: {round(result_residual_weight, 2)} kg ({round(perc_residual_weight, 2)}%)")
 
     st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
