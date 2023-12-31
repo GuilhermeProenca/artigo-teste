@@ -35,7 +35,8 @@ textos = {
     }
 }
 
-idioma_selecionado = st.radio(textos[idioma_selecionado]["menu_idioma"], textos[idioma_selecionado]["opcoes_idioma"], index=0, key="idioma")
+teste = st.session_state.idioma_selecionado
+idioma_selecionado = st.radio(textos[teste]["menu_idioma"], textos[teste]["opcoes_idioma"], index=0, key="idioma")
 
 titulo = textos[idioma_selecionado]["titulo"]
 objetivo = textos[idioma_selecionado]["objetivo"]
