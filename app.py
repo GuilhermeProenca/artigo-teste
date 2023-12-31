@@ -10,11 +10,11 @@ idioma_selecionado = st.radio("Selecionar o idioma - Select the language", ["Por
 
 # Crie um dicionário para mapear os textos em português e inglês
 textos = {
-    "Português": {
+    "Português - Portuguese": {
         "titulo": "Projeto Detecção de Medidas Corporais Através de Imagens Para Cálculos de Avaliação Física",
         "objetivo": "Objetivo: Com os dados de altura, peso, idade, gênero e imagem de frente/lado, fornecer informações sobre uma pessoa."
     },
-    "Inglês": {
+    "Inglês - English": {
         "titulo": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
         "objetivo": "Objective: With height, weight, age, gender, and front/side image data, provide information about a person."
     }
