@@ -318,7 +318,15 @@ if st.button(texts[selected_language]["result_button"]):
 
     st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
 
-    st.write(f"Status IMC: {st.latex(r'''a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =\sum_{k=0}^{n-1} ar^k =a \left(\frac{1-r^{n}}{1-r}\right)''')}  {imc_status}")
+    st.write("IMC (", end="")
+
+    # Exibir a parte em LaTeX usando a sintaxe $...$
+    st.latex("kg/m^2")
+
+    # Fechar parêntese
+    st.write("):")
+
+    st.write(f"Status IMC: {imc_status}")
 
     st.write(f"Taxa de metabolismo basal (k/cal): {round(result_tmb, 0)}")
 
