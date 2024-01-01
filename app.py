@@ -23,7 +23,7 @@ texts = {
         "age_example": "Exemplo: 35 anos",
         "height": "Altura",
         "height_example": "Exemplo: 170 cm",
-        "weight": "Peso,
+        "weight": "Peso",
         "weight_example": "Exemplo: 80 kg",
         "factor": "Fator de atividade",
         "factor_select": "Selecione uma opção",
