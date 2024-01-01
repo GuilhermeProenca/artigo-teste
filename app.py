@@ -318,7 +318,10 @@ if st.button(texts[selected_language]["result_button"]):
 
     st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
 
-    st.write("IMC (", st.latex("kg/m^2"), "):")
+    st.write("kg/m", end="")
+
+    # Exibir "^2" como uma potência com tamanho reduzido
+    st.latex(r"^{2}")
 
     st.write(f"Status IMC: {imc_status}")
 
