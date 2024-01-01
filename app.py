@@ -35,7 +35,7 @@ texts = {
         "status_gcm": ["Magreza",\
                        "Normal",\
                        "Sobrepeso",\
-                       "Obesidade"]
+                       "Obesidade"],
         "status_imc": ["Muito abaixo do peso",\
                        "Abaixo do peso",\
                        "Peso normal",\
@@ -70,7 +70,7 @@ texts = {
         "status_gcm": ["Thinness",\
                        "Normal",\
                        "Overweight",\
-                       "Obesity"]
+                       "Obesity"],
         "status_imc": ["Very underweight",\
                        "Under weight",\
                        "Normal weight",\
