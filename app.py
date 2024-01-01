@@ -316,15 +316,10 @@ if st.button(texts[selected_language]["result_button"]):
 
     st.write(f"Peso residual: {round(result_residual_weight, 2)} kg ({round(perc_residual_weight, 2)}%)")
 
-    st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
-
-    st.write("kg/m", end="")
-
-    # Exibir "^2" como uma potência com tamanho reduzido
-    st.write("Texto com expoente: $x^2$")
+    st.write(f"IMC ($kg/m^2$): {round(result_imc, 2)}")
 
     st.write(f"Status IMC: {imc_status}")
 
-    st.write(f"Taxa de metabolismo basal (k/cal): {round(result_tmb, 0)}")
+    st.write(f"Taxa de metabolismo basal ($k/cal$): {round(result_tmb, 0)}")
 
-    st.write(f"Consumo de caloria diário (k/cal): {round(result_daily_calorie, 0)}")
+    st.write(f"Consumo de caloria diário ($k/cal$): {round(result_daily_calorie, 0)}")
