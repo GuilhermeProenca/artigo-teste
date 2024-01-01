@@ -318,13 +318,7 @@ if st.button(texts[selected_language]["result_button"]):
 
     st.write(f"IMC (kg/m2): {round(result_imc, 2)}")
 
-    st.write("IMC (", end="")
-
-    # Exibir a parte em LaTeX usando a sintaxe $...$
-    st.latex("kg/m^2")
-
-    # Fechar parêntese
-    st.write("):")
+    st.write("IMC (", st.latex("kg/m^2"), "):")
 
     st.write(f"Status IMC: {imc_status}")
 
