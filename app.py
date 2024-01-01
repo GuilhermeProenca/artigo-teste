@@ -321,7 +321,7 @@ if st.button(texts[selected_language]["result_button"]):
     st.write("kg/m", end="")
 
     # Exibir "^2" como uma potência com tamanho reduzido
-    st.latex(r"^{2}")
+    st.write("Texto com expoente: $x^2$")
 
     st.write(f"Status IMC: {imc_status}")
 
