@@ -108,7 +108,7 @@ weight_example = texts[selected_language]["weight_example"]
 factor_text = texts[selected_language]["factor"]
 factor_select = texts[selected_language]["factor_select"]
 factor_menu = texts[selected_language]["factor_menu"]
-info_text = texts[selected_language]["info_text"]
+result_text = texts[selected_language]["result_text"]
 
 # Exibição dos textos iniciais no Streamlit
 st.title(title)
@@ -312,7 +312,7 @@ if st.button(texts[selected_language]["result_button"]):
     st.write("---")
 
     with st.sidebar:
-        st.markdown(f"### {info_text}")
+        st.markdown(f"### {result_text}")
         st.write(texts[selected_language]["result_info"])
 
 
