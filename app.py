@@ -313,7 +313,7 @@ if st.button(texts[selected_language]["result_button"]):
 
     with st.sidebar:
         st.markdown(f"### {info_text}")
-        st.write(f"{texts[selected_language]["result_info"]}")
+        st.write(texts[selected_language]["result_info"])
 
 
     st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
