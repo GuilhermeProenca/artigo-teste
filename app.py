@@ -84,7 +84,7 @@ texts = {
                        "Obesity III (morbid)"],
         "result_button": "Result",
         "result_text": "Additional Information",
-        "result_data" "",
+        "result_data": "",
         "result_info": "Fat mass: All the fat in the body.\n\
                         Lean mass: Body weight free of fat, such as muscles, bone mass, organs, skin and join."
     }
