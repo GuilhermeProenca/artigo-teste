@@ -43,7 +43,11 @@ texts = {
                        "Obesidade I",\
                        "Obesidade II (severa)",\
                        "Obesidade III (mórbida)"],
-        "result_button": "Resultado"
+        "result_button": "Resultado",
+        "result_text": "Informações Adicionais",
+        "result_data": "",
+        "result_info": "Massa gorda: Toda a gordura do corpo.\n\
+                        Massa magra: Peso do corpo livre de gordura, como os músculos, massa óssea, órgãos, pele e articulações."
     },
     "Inglês - English": {
         "title": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -78,7 +82,11 @@ texts = {
                        "Obesity I",\
                        "Obesity II (severe)",\
                        "Obesity III (morbid)"],
-        "result_button": "Result"
+        "result_button": "Result",
+        "result_text": "Additional Information",
+        "result_data" "",
+        "result_info": "Fat mass: All the fat in the body.\n\
+                        Lean mass: Body weight free of fat, such as muscles, bone mass, organs, skin and join."
     }
 }
 
@@ -100,6 +108,7 @@ weight_example = texts[selected_language]["weight_example"]
 factor_text = texts[selected_language]["factor"]
 factor_select = texts[selected_language]["factor_select"]
 factor_menu = texts[selected_language]["factor_menu"]
+info_text = texts[selected_language]["info_text"]
 
 # Exibição dos textos iniciais no Streamlit
 st.title(title)
@@ -303,8 +312,8 @@ if st.button(texts[selected_language]["result_button"]):
     st.write("---")
 
     with st.sidebar:
-        st.markdown("### Informações Adicionais")
-        st.write("Se precisar de mais detalhes ou tiver dúvidas, entre em contato.")
+        st.markdown(f"### {info_text}")
+        st.write(f"{texts[selected_language]["result_info"]}")
 
 
     st.write(f"% de gordura corporal: {round(result_gcm, 2)}")
