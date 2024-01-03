@@ -49,7 +49,10 @@ texts = {
         "result_info": "\nMassa gorda: Toda a gordura do corpo.\n\
                         \nMassa magra: Peso do corpo livre de gordura, como os músculos, massa óssea, órgãos, pele e articulações.\n\
                         \nMassa residual: Tudo que não é gordura, músculo ou ossos, ou seja, agrega os órgãos, sangue, pelos entre outros tecidos.\n\
-                        \nTaxa de metabolismo basal: Energia mínima apenas para manter as funções vitais em repouso."
+                        \nTaxa de metabolismo basal: Energia mínima apenas para manter as funções vitais em repouso.\n\
+                        \nConsumo de calorias diário: Quantidade total de energia que o corpo gasta por dia, incluindo a energia que o corpo precisa\
+                         para manter as funções básicas, como respiração ou os batimentos do coração, e a energia que se gasta em atividades feitas\
+                          ao longo do dia, como limpar a casa, trabalhar ou praticar atividades físicas."
     },
     "Inglês - English": {
         "title": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -90,7 +93,10 @@ texts = {
         "result_info": "\nFat mass: All the fat in the body.\n\
                         \nLean mass: Body weight free of fat, such as muscles, bone mass, organs, skin and join.\n\
                         \nResidual mass: Everything that is not fat, muscle or bones, that is, it adds organs, blood, hair and other tissues.\n\
-                        \nBasal metabolic rate: Minimum energy just to maintain vital functions at rest."
+                        \nBasal metabolic rate: Minimum energy just to maintain vital functions at rest.\n\
+                        \nDaily calorie consumption: Total amount of energy the body uses per day, including the energy the body needs to maintain\
+                         basic functions, such as breathing or heartbeat, and the energy spent on activities carried out throughout the day , such\
+                          as cleaning the house, working or doing physical activities."
     }
 }
 
