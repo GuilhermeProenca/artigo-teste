@@ -46,8 +46,10 @@ texts = {
         "result_button": "Resultado",
         "result_text": "Informações Adicionais",
         "result_data": "",
-        "result_info": "Massa gorda: Toda a gordura do corpo.\n\
-                        Massa magra: Peso do corpo livre de gordura, como os músculos, massa óssea, órgãos, pele e articulações."
+        "result_info": "\nMassa gorda: Toda a gordura do corpo.\n\n\
+                        Massa magra: Peso do corpo livre de gordura, como os músculos, massa óssea, órgãos, pele e articulações.\n\n\
+                        Massa residual: Tudo que não é gordura, músculo ou ossos, ou seja, agrega os órgãos, sangue, pelos entre outros tecidos.\n\n\
+                        Taxa de metabolismo basal: Energia mínima apenas para manter as funções vitais em repouso."
     },
     "Inglês - English": {
         "title": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -85,8 +87,10 @@ texts = {
         "result_button": "Result",
         "result_text": "Additional Information",
         "result_data": "",
-        "result_info": "Fat mass: All the fat in the body.\n\
-                        Lean mass: Body weight free of fat, such as muscles, bone mass, organs, skin and join."
+        "result_info": "\nFat mass: All the fat in the body.\n\n\
+                        Lean mass: Body weight free of fat, such as muscles, bone mass, organs, skin and join.\n\n\
+                        Residual mass: Everything that is not fat, muscle or bones, that is, it adds organs, blood, hair and other tissues.\n\n\
+                        Basal metabolic rate: Minimum energy just to maintain vital functions at rest."
     }
 }
 
@@ -323,7 +327,7 @@ if st.button(texts[selected_language]["result_button"]):
     st.write(f"Massa gorda: {round(fat_mass, 2)} kg ({round(perc_fat_mass, 2)}%)") 
     st.write(f"Massa magra: {round(lean_mass, 2)} kg ({round(perc_lean_mass, 2)}%)")
 
-    st.write(f"Peso residual: {round(result_residual_weight, 2)} kg ({round(perc_residual_weight, 2)}%)")
+    st.write(f"Massa residual: {round(result_residual_weight, 2)} kg ({round(perc_residual_weight, 2)}%)")
 
     st.write(f"IMC ($kg/m^2$): {round(result_imc, 2)}")
 
