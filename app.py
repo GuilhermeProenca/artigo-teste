@@ -47,9 +47,9 @@ texts = {
         "result_text": "Informações Adicionais",
         "result_data": "",
         "result_info": "\nMassa gorda: Toda a gordura do corpo.\n\
-                        Massa magra: Peso do corpo livre de gordura, como os músculos, massa óssea, órgãos, pele e articulações.\n\
-                        Massa residual: Tudo que não é gordura, músculo ou ossos, ou seja, agrega os órgãos, sangue, pelos entre outros tecidos.\n\
-                        Taxa de metabolismo basal: Energia mínima apenas para manter as funções vitais em repouso."
+                        \nMassa magra: Peso do corpo livre de gordura, como os músculos, massa óssea, órgãos, pele e articulações.\n\
+                        \nMassa residual: Tudo que não é gordura, músculo ou ossos, ou seja, agrega os órgãos, sangue, pelos entre outros tecidos.\n\
+                        \nTaxa de metabolismo basal: Energia mínima apenas para manter as funções vitais em repouso."
     },
     "Inglês - English": {
         "title": "Body Measurement Detection Project Through Images for Physical Assessment Calculations",
@@ -88,9 +88,9 @@ texts = {
         "result_text": "Additional Information",
         "result_data": "",
         "result_info": "\nFat mass: All the fat in the body.\n\
-                        Lean mass: Body weight free of fat, such as muscles, bone mass, organs, skin and join.\n\
-                        Residual mass: Everything that is not fat, muscle or bones, that is, it adds organs, blood, hair and other tissues.\n\
-                        Basal metabolic rate: Minimum energy just to maintain vital functions at rest."
+                        \nLean mass: Body weight free of fat, such as muscles, bone mass, organs, skin and join.\n\
+                        \nResidual mass: Everything that is not fat, muscle or bones, that is, it adds organs, blood, hair and other tissues.\n\
+                        \nBasal metabolic rate: Minimum energy just to maintain vital functions at rest."
     }
 }
 
